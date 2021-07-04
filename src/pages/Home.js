@@ -44,10 +44,22 @@ const Home = () => {
     <MainPageLayout>
       <input
         type="text"
+        placeholder="Search for Something"
         onChange={onInputChange}
         onKeyDown={onKeyDown}
         value={input}
       />
+
+      <div>
+        <label htmlFor="shows-search">
+          Shows <input id="shows-search" type="radio" />
+        </label>
+      </div>
+
+      <label htmlFor="actors-search">
+        Actors <input id="actors-search" type="radio" />
+      </label>
+
       <button type="button" onClick={onSearch}>
         Search
       </button>
