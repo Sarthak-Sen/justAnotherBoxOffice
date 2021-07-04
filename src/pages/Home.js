@@ -3,15 +3,18 @@ import MainPageLayout from '../components/MainPageLayout';
 
 const Home = () => {
   const [input, setInput] = useState('');
-  const onInputChange = ev => {
-    setInput(ev.target.value);
-  };
+
   const onSearch = () => {
     fetch(`https://api.tvmaze.com/search/shows?q=${input}`)
       .then(r => r.json())
       .then(result => console.log(result));
   };
-  const onKeyChange = ev => {
+
+  const onInputChange = ev => {
+    setInput(ev.target.value);
+  };
+
+  const onKeyDown = ev => {
     if (ev.KeyCode === 13) {
       onSearch();
     }
